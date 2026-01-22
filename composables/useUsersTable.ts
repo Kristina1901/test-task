@@ -45,13 +45,12 @@ export function useUsersTable(users) {
     if (!perPage.value || perPage.value <= 0) return 1;
     return Math.max(1, Math.ceil(sortedUsers.value.length / perPage.value));
   });
-  watch([debouncedSearch, role, perPage], () => {
+  watch([search, role, perPage], () => {
     page.value = 1;
   });
   watch(totalPages, () => {
     if (page.value > totalPages.value) page.value = totalPages.value;
   });
-
   return {
     search,
     role,
