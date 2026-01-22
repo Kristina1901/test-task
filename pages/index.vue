@@ -63,12 +63,12 @@ sortDirection.value = getQuery("sortDir", "asc");
 watch([debouncedSearch, role, page, perPage, sortBy, sortDirection], () => {
   router.replace({
     query: {
-      search: debouncedSearch.value || null,
-      role: role.value || null,
+      search: debouncedSearch.value,
+      role: role.value,
       page: page.value,
       perPage: perPage.value,
-      sortBy: sortBy.value || null,
-      sortDir: sortDirection.value || null,
+      sortBy: sortBy.value,
+      sortDir: sortDirection.value,
     },
   });
 });
